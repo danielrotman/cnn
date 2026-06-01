@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A Convolutional Neural Network built entirely from scratch using vanilla JavaScript. Draw shapes and train a CNN to classify circles, squares, and triangles.">
+  <title>CNN From Scratch — Shape Classifier</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Effects -->
+  <div class="bg-effects" aria-hidden="true">
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <div class="bg-orb bg-orb--3"></div>
+  </div>
+
+  <div class="app-container">
+
+    <!-- Header -->
+    <header class="app-header fade-in-up">
+      <div class="app-header__badge">CNN Engine</div>
+      <h1 class="app-header__title">Neural Network<br>Shape Classifier</h1>
+      <p class="app-header__subtitle">Draw circles, squares & triangles — train a CNN built entirely from scratch in vanilla JavaScript</p>
+      <nav class="app-header__nav">
+        <a href="dictionary.html">📖 CNN Dictionary</a>
+      </nav>
+    </header>
+
+    <!-- Main Grid -->
+    <div class="main-grid">
+
+      <!-- Canvas Area -->
+      <section class="main-grid__canvas-area glass-card fade-in-up" id="canvasSection">
+        <div class="glass-card__title">
+          <span class="icon icon--purple">🎨</span>
+          Drawing Canvas
+        </div>
+        <div class="canvas-wrapper">
+          <canvas id="drawCanvas" width="280" height="280"></canvas>
+          <div class="canvas-tools">
+            <button class="canvas-tools__btn canvas-tools__btn--active" id="btnDraw" type="button">✏️ Draw</button>
+            <button class="canvas-tools__btn" id="btnErase" type="button">🧹 Erase</button>
+            <button class="canvas-tools__btn" id="btnClear" type="button">🗑️ Clear</button>
+          </div>
+          <div class="brush-size-control">
+            <label for="brushSize">Brush:</label>
+            <input type="range" id="brushSize" min="4" max="30" value="14">
+            <span id="brushSizeVal" class="slider-field__value">14px</span>
+          </div>
+          <div class="preview-section">
+            <span class="preview-section__label">28×28 Input →</span>
+            <canvas id="previewCanvas" width="28" height="28"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- Controls Panel -->
+      <section class="main-grid__controls glass-card fade-in-up" id="controlsSection">
+        <div class="glass-card__title">
+          <span class="icon icon--blue">⚙️</span>
+          Model Configuration
+        </div>
+
+        <!-- Architecture Viz -->
+        <div class="arch-viz" id="archViz"></div>
+
+        <div class="controls-grid" style="margin-top: 16px;">
+          <div class="control-field">
+            <label class="control-field__label" for="numFilters">Filters</label>
+            <input class="control-field__input" type="number" id="numFilters" value="4" min="1" max="16" step="1">
+            <span class="control-field__hint">Conv filters per layer</span>
+          </div>
+          <div class="control-field">
+            <label class="control-field__label" for="filterSize">Filter Size</label>
+            <input class="control-field__input" type="number" id="filterSize" value="3" min="2" max="7" step="1">
+            <span class="control-field__hint">Kernel width/height</span>
+          </div>
+          <div class="control-field">
+            <label class="control-field__label" for="numConvLayers">Conv Layers</label>
+            <input class="control-field__input" type="number" id="numConvLayers" value="1" min="1" max="3" step="1">
+            <span class="control-field__hint">Convolutional layers</span>
+          </div>
+          <div class="control-field">
+            <label class="control-field__label" for="epochs">Epochs</label>
+            <input class="control-field__input" type="number" id="epochs" value="15" min="1" max="200" step="1">
+            <span class="control-field__hint">Training iterations</span>
+          </div>
+        </div>
+
+        <div class="slider-field" style="margin-top: 16px;">
+          <div class="slider-field__header">
+            <label class="control-field__label" for="learningRate">Learning Rate</label>
+            <span class="slider-field__value" id="lrValue">0.01</span>
+          </div>
+          <input type="range" id="learningRate" min="0.001" max="0.1" step="0.001" value="0.01">
+        </div>
+
+        <!-- Model Status -->
+        <div class="model-status model-status--untrained" id="modelStatus">
+          <span class="model-status__dot"></span>
+          <span id="modelStatusText">Model untrained</span>
+        </div>
+
+        <!-- Buttons -->
+        <div class="btn-group">
+          <button class="btn btn--primary" id="btnTrain" type="button">🚀 Train</button>
+          <button class="btn btn--success" id="btnPredict" type="button">🔮 Predict</button>
+          <button class="btn btn--secondary" id="btnDownload" type="button">💾 Download Weights</button>
+          <button class="btn btn--danger" id="btnReset" type="button">🔄 Reset</button>
+        </div>
+
+        <!-- Training Data -->
+        <div class="data-section">
+          <div class="glass-card__title" style="font-size:0.85rem; margin-top:12px;">
+            <span class="icon icon--cyan">📊</span>
+            Training Data
+          </div>
+          <div class="data-grid">
+            <div class="data-class">
+              <div class="data-class__emoji">⭕</div>
+              <div class="data-class__name">Circle</div>
+              <div class="data-class__count" id="countCircle">0</div>
+              <button class="data-class__add-btn" data-class="0" type="button">+ Add Sample</button>
+            </div>
+            <div class="data-class">
+              <div class="data-class__emoji">⬛</div>
+              <div class="data-class__name">Square</div>
+              <div class="data-class__count" id="countSquare">0</div>
+              <button class="data-class__add-btn" data-class="1" type="button">+ Add Sample</button>
+            </div>
+            <div class="data-class">
+              <div class="data-class__emoji">🔺</div>
+              <div class="data-class__name">Triangle</div>
+              <div class="data-class__count" id="countTriangle">0</div>
+              <button class="data-class__add-btn" data-class="2" type="button">+ Add Sample</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Training Panel -->
+      <section class="main-grid__training glass-card fade-in-up" id="trainingSection">
+        <div class="glass-card__title">
+          <span class="icon icon--green">📈</span>
+          Training Monitor
+        </div>
+        <div class="training-panel">
+          <div class="progress-bar" id="trainingProgress">
+            <div class="progress-bar__fill" id="progressFill"></div>
+          </div>
+          <div class="training-stats">
+            <div class="stat-chip">
+              <div class="stat-chip__label">Epoch</div>
+              <div class="stat-chip__value stat-chip__value--purple" id="statEpoch">0 / 0</div>
+            </div>
+            <div class="stat-chip">
+              <div class="stat-chip__label">Loss</div>
+              <div class="stat-chip__value stat-chip__value--rose" id="statLoss">—</div>
+            </div>
+            <div class="stat-chip">
+              <div class="stat-chip__label">Accuracy</div>
+              <div class="stat-chip__value stat-chip__value--green" id="statAccuracy">—</div>
+            </div>
+          </div>
+          <div class="training-log" id="trainingLog">
+            <div class="log-entry log-entry--info">Waiting for training data…</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Output Panel -->
+      <section class="main-grid__output glass-card fade-in-up" id="outputSection">
+        <div class="glass-card__title">
+          <span class="icon icon--rose">🧠</span>
+          Prediction Output
+        </div>
+        <div class="output-panel">
+          <div class="prediction-result" id="predictionResult">
+            <div class="prediction-result__shape" id="predShape">❓</div>
+            <div class="prediction-result__label" id="predLabel">Draw & Predict</div>
+            <div class="prediction-result__confidence" id="predConf">Confidence: —</div>
+          </div>
+          <div class="confidence-bars">
+            <div class="confidence-bar">
+              <span class="confidence-bar__label">⭕ Circle</span>
+              <div class="confidence-bar__track">
+                <div class="confidence-bar__fill confidence-bar__fill--circle" id="barCircle"></div>
+              </div>
+              <span class="confidence-bar__pct" id="pctCircle">0%</span>
+            </div>
+            <div class="confidence-bar">
+              <span class="confidence-bar__label">⬛ Square</span>
+              <div class="confidence-bar__track">
+                <div class="confidence-bar__fill confidence-bar__fill--square" id="barSquare"></div>
+              </div>
+              <span class="confidence-bar__pct" id="pctSquare">0%</span>
+            </div>
+            <div class="confidence-bar">
+              <span class="confidence-bar__label">🔺 Triangle</span>
+              <div class="confidence-bar__track">
+                <div class="confidence-bar__fill confidence-bar__fill--triangle" id="barTriangle"></div>
+              </div>
+              <span class="confidence-bar__pct" id="pctTriangle">0%</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /main-grid -->
+  </div><!-- /app-container -->
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="cnn.js"></script>
+</body>
+</html>

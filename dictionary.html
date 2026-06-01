@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A comprehensive glossary of 40 essential CNN and AI terms. Learn key concepts in deep learning, neural networks, and convolutional neural network architecture.">
+  <meta name="theme-color" content="#0a0a12">
+  <title>CNN Dictionary — 40 Essential AI &amp; Deep Learning Terms</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dict.css">
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- Navigation -->
+  <a href="index.html" class="nav-back" aria-label="Back to model page">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5"/>
+    </svg>
+    Back to Model
+  </a>
+
+  <!-- Header -->
+  <header class="dict-header">
+    <span class="dict-header__badge">Reference Guide</span>
+    <h1 class="dict-header__title">CNN Dictionary</h1>
+    <p class="dict-header__subtitle">40 essential terms to master convolutional neural networks and deep learning — from fundamentals to evaluation.</p>
+  </header>
+
+  <!-- Search -->
+  <div class="search-container">
+    <div class="search-bar">
+      <svg class="search-bar__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/>
+      </svg>
+      <input
+        type="search"
+        class="search-bar__input"
+        id="searchInput"
+        placeholder="Search terms — e.g. 'backpropagation', 'pooling'…"
+        aria-label="Search dictionary terms"
+        autocomplete="off"
+      >
+      <p class="search-bar__count" id="resultCount" aria-live="polite">Showing all 40 terms</p>
+    </div>
+  </div>
+
+  <!-- No results -->
+  <div class="no-results" id="noResults" role="status">
+    <div class="no-results__emoji" aria-hidden="true">🔍</div>
+    <p class="no-results__text">No terms match your search. Try a different keyword.</p>
+  </div>
+
+  <!-- Dictionary Grid -->
+  <main class="dict-grid" id="dictGrid" aria-label="Dictionary terms">
+
+    <!-- 1. Artificial Intelligence -->
+    <article class="term-card" data-term="artificial intelligence ai" data-category="fundamentals">
+      <span class="term-card__number">#01</span>
+      <span class="term-card__category badge-fundamentals">Fundamentals</span>
+      <h2 class="term-card__name">Artificial Intelligence (AI)</h2>
+      <p class="term-card__def">The broad field of computer science focused on building systems capable of performing tasks that typically require human intelligence. AI encompasses many sub-fields including machine learning, natural language processing, and computer vision. It ranges from narrow AI that excels at specific tasks to the theoretical concept of general AI.</p>
+    </article>
+
+    <!-- 2. Machine Learning -->
+    <article class="term-card" data-term="machine learning ml" data-category="fundamentals">
+      <span class="term-card__number">#02</span>
+      <span class="term-card__category badge-fundamentals">Fundamentals</span>
+      <h2 class="term-card__name">Machine Learning</h2>
+      <p class="term-card__def">A subset of AI where systems learn patterns and make decisions from data without being explicitly programmed for each scenario. Algorithms improve their performance automatically through experience by identifying statistical regularities in training data. Common paradigms include supervised, unsupervised, and reinforcement learning.</p>
+    </article>
+
+    <!-- 3. Deep Learning -->
+    <article class="term-card" data-term="deep learning" data-category="fundamentals">
+      <span class="term-card__number">#03</span>
+      <span class="term-card__category badge-fundamentals">Fundamentals</span>
+      <h2 class="term-card__name">Deep Learning</h2>
+      <p class="term-card__def">A specialised branch of machine learning that uses neural networks with many layers (hence "deep") to model complex patterns in data. Deep learning has driven breakthroughs in image recognition, speech understanding, and generative AI. It excels when large amounts of data and computational power are available.</p>
+    </article>
+
+    <!-- 4. Neural Network -->
+    <article class="term-card" data-term="neural network" data-category="fundamentals">
+      <span class="term-card__number">#04</span>
+      <span class="term-card__category badge-fundamentals">Fundamentals</span>
+      <h2 class="term-card__name">Neural Network</h2>
+      <p class="term-card__def">A computing model inspired by the structure of the human brain, composed of interconnected layers of artificial neurons. Each neuron receives inputs, applies a weighted sum and an activation function, then passes the result onward. Neural networks can approximate virtually any function given enough data and capacity.</p>
+    </article>
+
+    <!-- 5. Convolutional Neural Network (CNN) -->
+    <article class="term-card" data-term="convolutional neural network cnn" data-category="architecture">
+      <span class="term-card__number">#05</span>
+      <span class="term-card__category badge-architecture">Architecture</span>
+      <h2 class="term-card__name">Convolutional Neural Network (CNN)</h2>
+      <p class="term-card__def">A specialised type of neural network designed primarily for processing grid-like data such as images. CNNs use convolutional layers to automatically learn spatial hierarchies of features — from simple edges to complex objects. They are the backbone of modern computer vision systems.</p>
+    </article>
+
+    <!-- 6. Convolution -->
+    <article class="term-card" data-term="convolution" data-category="architecture">
+      <span class="term-card__number">#06</span>
+      <span class="term-card__category badge-architecture">Architecture</span>
+      <h2 class="term-card__name">Convolution</h2>
+      <p class="term-card__def">A mathematical operation that slides a small filter across the input data, computing element-wise multiplications and summing the results at each position. In CNNs, convolution extracts local features like edges, textures, and shapes from an image. Stacking convolutions builds increasingly abstract representations.</p>
+    </article>
+
+    <!-- 7. Filter (Kernel) -->
+    <article class="term-card" data-term="filter kernel" data-category="architecture">
+      <span class="term-card__number">#07</span>
+      <span class="term-card__category badge-architecture">Architecture</span>
+      <h2 class="term-card__name">Filter (Kernel)</h2>
+      <p class="term-card__def">A small matrix of learnable weights that is convolved with input data to detect specific features. Each filter specialises in detecting a particular pattern, such as horizontal edges, colour gradients, or textures. A convolutional layer typically contains many filters to capture diverse features simultaneously.</p>
+    </article>
+
+    <!-- 8. Feature Map -->
+    <article class="term-card" data-term="feature map activation map" data-category="architecture">
+      <span class="term-card__number">#08</span>
+      <span class="term-card__category badge-architecture">Architecture</span>
+      <h2 class="term-card__name">Feature Map</h2>
+      <p class="term-card__def">The output produced when a filter is applied across an input, highlighting where specific features are detected. Each filter generates its own feature map, so a layer with 32 filters produces 32 feature maps. Deeper layers produce feature maps that encode increasingly abstract and complex patterns.</p>
+    </article>
+
+    <!-- 9. Pooling (Max Pooling) -->
+    <article class="term-card" data-term="pooling max pooling average pooling" data-category="architecture">
+      <span class="term-card__number">#09</span>
+      <span class="term-card__category badge-architecture">Architecture</span>
+      <h2 class="term-card__name">Pooling (Max Pooling)</h2>
+      <p class="term-card__def">A down-sampling operation that reduces the spatial dimensions of feature maps while retaining the most important information. Max pooling, the most common variant, selects the maximum value within each pooling window. This reduces computational cost, provides a degree of translation invariance, and helps prevent overfitting.</p>
+    </article>
+
+    <!-- 10. Stride -->
+    <article class="term-card" data-term="stride" data-category="architecture">
+      <span class="term-card__number">#10</span>
+      <span class="term-card__category badge-architecture">Architecture</span>
+      <h2 class="term-card__name">Stride</h2>
+      <p class="term-card__def">The number of pixels the filter moves across the input in each step during convolution or pooling. A stride of 1 means the filter shifts one pixel at a time, while a stride of 2 skips every other position. Larger strides reduce the output dimensions and computational cost.</p>
+    </article>
+
+    <!-- 11. Padding -->
+    <article class="term-card" data-term="padding zero padding same valid" data-category="architecture">
+      <span class="term-card__number">#11</span>
+      <span class="term-card__category badge-architecture">Architecture</span>
+      <h2 class="term-card__name">Padding</h2>
+      <p class="term-card__def">The practice of adding extra pixels (typically zeros) around the border of an input before applying convolution. Padding preserves spatial dimensions so that the output feature map matches the input size. It also ensures that edge and corner pixels contribute equally to the learned features.</p>
+    </article>
+
+    <!-- 12. Neuron -->
+    <article class="term-card" data-term="neuron node unit perceptron" data-category="fundamentals">
+      <span class="term-card__number">#12</span>
+      <span class="term-card__category badge-fundamentals">Fundamentals</span>
+      <h2 class="term-card__name">Neuron</h2>
+      <p class="term-card__def">The basic computational unit in a neural network, loosely modelled after biological neurons. A neuron computes a weighted sum of its inputs, adds a bias term, and passes the result through an activation function. Networks are built by connecting many neurons in layers.</p>
+    </article>
+
+    <!-- 13. Activation Function -->
+    <article class="term-card" data-term="activation function nonlinearity" data-category="activation">
+      <span class="term-card__number">#13</span>
+      <span class="term-card__category badge-activation">Activation</span>
+      <h2 class="term-card__name">Activation Function</h2>
+      <p class="term-card__def">A mathematical function applied to a neuron's output to introduce non-linearity into the network. Without activation functions, even a deep network would behave like a single linear transformation. Common choices include ReLU, sigmoid, and softmax, each suited to different scenarios.</p>
+    </article>
+
+    <!-- 14. ReLU -->
+    <article class="term-card" data-term="relu rectified linear unit" data-category="activation">
+      <span class="term-card__number">#14</span>
+      <span class="term-card__category badge-activation">Activation</span>
+      <h2 class="term-card__name">ReLU (Rectified Linear Unit)</h2>
+      <p class="term-card__def">The most widely used activation function in deep learning, defined as f(x) = max(0, x). ReLU outputs zero for negative inputs and the input itself for positive values, providing a simple yet effective non-linearity. It trains faster than sigmoid or tanh because it avoids the vanishing gradient problem for positive values.</p>
+    </article>
+
+    <!-- 15. Sigmoid -->
+    <article class="term-card" data-term="sigmoid logistic function" data-category="activation">
+      <span class="term-card__number">#15</span>
+      <span class="term-card__category badge-activation">Activation</span>
+      <h2 class="term-card__name">Sigmoid</h2>
+      <p class="term-card__def">An activation function that squashes any real number into the range (0, 1), making it useful for binary classification outputs. Its S-shaped curve smoothly transitions between 0 and 1, providing a probabilistic interpretation. However, it suffers from the vanishing gradient problem, which limits its use in hidden layers of deep networks.</p>
+    </article>
+
+    <!-- 16. Softmax -->
+    <article class="term-card" data-term="softmax normalized exponential" data-category="activation">
+      <span class="term-card__number">#16</span>
+      <span class="term-card__category badge-activation">Activation</span>
+      <h2 class="term-card__name">Softmax</h2>
+      <p class="term-card__def">An activation function that converts a vector of raw scores (logits) into a probability distribution, where all values sum to 1. It is typically used in the final layer of a classification network to assign probabilities to each class. The class with the highest probability is chosen as the model's prediction.</p>
+    </article>
+
+    <!-- 17. Forward Pass -->
+    <article class="term-card" data-term="forward pass forward propagation inference" data-category="training">
+      <span class="term-card__number">#17</span>
+      <span class="term-card__category badge-training">Training</span>
+      <h2 class="term-card__name">Forward Pass</h2>
+      <p class="term-card__def">The process of passing input data through the network layer by layer, from input to output, to generate a prediction. Each layer applies its weights, biases, and activation functions sequentially to transform the data. The forward pass is the first step in both training and inference.</p>
+    </article>
+
+    <!-- 18. Backpropagation -->
+    <article class="term-card" data-term="backpropagation back propagation backward pass" data-category="training">
+      <span class="term-card__number">#18</span>
+      <span class="term-card__category badge-training">Training</span>
+      <h2 class="term-card__name">Backpropagation</h2>
+      <p class="term-card__def">The core algorithm for training neural networks, which computes how much each weight contributed to the overall error. It works by propagating the loss gradient backward through the network using the chain rule of calculus. These gradients are then used by an optimiser to update weights and improve predictions.</p>
+    </article>
+
+    <!-- 19. Gradient Descent -->
+    <article class="term-card" data-term="gradient descent" data-category="optimization">
+      <span class="term-card__number">#19</span>
+      <span class="term-card__category badge-optimization">Optimization</span>
+      <h2 class="term-card__name">Gradient Descent</h2>
+      <p class="term-card__def">An iterative optimisation algorithm that adjusts model parameters in the direction that reduces the loss function most steeply. It computes the gradient (partial derivatives) of the loss with respect to each weight, then takes a step proportional to the negative gradient. It is the foundational strategy behind virtually all neural network training.</p>
+    </article>
+
+    <!-- 20. SGD -->
+    <article class="term-card" data-term="stochastic gradient descent sgd" data-category="optimization">
+      <span class="term-card__number">#20</span>
+      <span class="term-card__category badge-optimization">Optimization</span>
+      <h2 class="term-card__name">Stochastic Gradient Descent (SGD)</h2>
+      <p class="term-card__def">A variant of gradient descent that updates weights using the gradient computed from a single random sample (or small batch) rather than the entire dataset. This introduces noise that can help escape local minima and speeds up training significantly. SGD and its variants (Adam, RMSprop) are the most common optimisers in practice.</p>
+    </article>
+
+    <!-- 21. Learning Rate -->
+    <article class="term-card" data-term="learning rate step size" data-category="optimization">
+      <span class="term-card__number">#21</span>
+      <span class="term-card__category badge-optimization">Optimization</span>
+      <h2 class="term-card__name">Learning Rate</h2>
+      <p class="term-card__def">A hyperparameter that controls how large each weight update step is during gradient descent. Too high a learning rate can cause the model to overshoot optimal values and diverge, while too low a rate results in painfully slow convergence. Finding the right learning rate is one of the most critical tuning decisions in training.</p>
+    </article>
+
+    <!-- 22. Loss Function -->
+    <article class="term-card" data-term="loss function cost function objective function" data-category="training">
+      <span class="term-card__number">#22</span>
+      <span class="term-card__category badge-training">Training</span>
+      <h2 class="term-card__name">Loss Function</h2>
+      <p class="term-card__def">A function that quantifies how far the model's predictions are from the true target values, providing a single number to minimise. It guides the entire training process — backpropagation computes gradients of this function to update weights. Common loss functions include mean squared error for regression and cross-entropy for classification.</p>
+    </article>
+
+    <!-- 23. Cross-Entropy Loss -->
+    <article class="term-card" data-term="cross-entropy loss log loss categorical" data-category="training">
+      <span class="term-card__number">#23</span>
+      <span class="term-card__category badge-training">Training</span>
+      <h2 class="term-card__name">Cross-Entropy Loss</h2>
+      <p class="term-card__def">The standard loss function for classification tasks that measures the divergence between predicted probability distributions and true labels. It heavily penalises confident but wrong predictions, encouraging the model to produce well-calibrated probabilities. It pairs naturally with softmax outputs in multi-class classification problems.</p>
+    </article>
+
+    <!-- 24. Weights -->
+    <article class="term-card" data-term="weights parameters" data-category="fundamentals">
+      <span class="term-card__number">#24</span>
+      <span class="term-card__category badge-fundamentals">Fundamentals</span>
+      <h2 class="term-card__name">Weights</h2>
+      <p class="term-card__def">The learnable numerical parameters within a neural network that determine the strength of connections between neurons. During training, weights are iteratively adjusted by the optimiser to minimise the loss function. The specific pattern of trained weights encodes everything the network has learned from the data.</p>
+    </article>
+
+    <!-- 25. Bias -->
+    <article class="term-card" data-term="bias bias term offset" data-category="fundamentals">
+      <span class="term-card__number">#25</span>
+      <span class="term-card__category badge-fundamentals">Fundamentals</span>
+      <h2 class="term-card__name">Bias</h2>
+      <p class="term-card__def">An additional learnable parameter added to the weighted sum in each neuron before the activation function is applied. Bias allows the neuron to shift its activation threshold, enabling the network to better fit data that doesn't pass through the origin. Each neuron typically has its own independent bias value.</p>
+    </article>
+
+    <!-- 26. Epoch -->
+    <article class="term-card" data-term="epoch epochs" data-category="training">
+      <span class="term-card__number">#26</span>
+      <span class="term-card__category badge-training">Training</span>
+      <h2 class="term-card__name">Epoch</h2>
+      <p class="term-card__def">One complete pass through the entire training dataset during the training process. Models typically require many epochs (tens to hundreds) before the weights converge to good values. Monitoring performance across epochs helps diagnose whether the model is still improving or beginning to overfit.</p>
+    </article>
+
+    <!-- 27. Batch -->
+    <article class="term-card" data-term="batch mini-batch" data-category="training">
+      <span class="term-card__number">#27</span>
+      <span class="term-card__category badge-training">Training</span>
+      <h2 class="term-card__name">Batch</h2>
+      <p class="term-card__def">A subset of training samples processed together in a single forward and backward pass before updating the weights. Using batches instead of the full dataset makes training computationally feasible for large datasets. It also introduces beneficial noise that can improve generalisation.</p>
+    </article>
+
+    <!-- 28. Batch Size -->
+    <article class="term-card" data-term="batch size" data-category="training">
+      <span class="term-card__number">#28</span>
+      <span class="term-card__category badge-training">Training</span>
+      <h2 class="term-card__name">Batch Size</h2>
+      <p class="term-card__def">The number of training samples included in a single batch for one update step. Smaller batch sizes provide noisier gradients but can improve generalisation, while larger batches give more stable updates and better GPU utilisation. Common values range from 16 to 256, depending on memory and dataset size.</p>
+    </article>
+
+    <!-- 29. Training Set -->
+    <article class="term-card" data-term="training set training data" data-category="data">
+      <span class="term-card__number">#29</span>
+      <span class="term-card__category badge-data">Data</span>
+      <h2 class="term-card__name">Training Set</h2>
+      <p class="term-card__def">The portion of a dataset used to train the model by adjusting its weights through forward passes and backpropagation. It is typically the largest split, often comprising 60–80% of the total data. The quality and diversity of the training set directly determine how well the model can learn meaningful patterns.</p>
+    </article>
+
+    <!-- 30. Validation Set -->
+    <article class="term-card" data-term="validation set validation data dev set" data-category="data">
+      <span class="term-card__number">#30</span>
+      <span class="term-card__category badge-data">Data</span>
+      <h2 class="term-card__name">Validation Set</h2>
+      <p class="term-card__def">A separate portion of the dataset used to evaluate model performance during training, without contributing to weight updates. It helps tune hyperparameters and detect overfitting by providing an unbiased estimate of model skill on unseen data. If validation accuracy drops while training accuracy rises, the model is likely overfitting.</p>
+    </article>
+
+    <!-- 31. Test Set -->
+    <article class="term-card" data-term="test set test data" data-category="data">
+      <span class="term-card__number">#31</span>
+      <span class="term-card__category badge-data">Data</span>
+      <h2 class="term-card__name">Test Set</h2>
+      <p class="term-card__def">A held-out portion of the dataset used only once, after training is complete, to provide a final unbiased evaluation of the model's performance. It simulates how the model will perform on completely unseen real-world data. The test set should never be used for any training or hyperparameter decisions.</p>
+    </article>
+
+    <!-- 32. Overfitting -->
+    <article class="term-card" data-term="overfitting over-fitting memorisation" data-category="evaluation">
+      <span class="term-card__number">#32</span>
+      <span class="term-card__category badge-evaluation">Evaluation</span>
+      <h2 class="term-card__name">Overfitting</h2>
+      <p class="term-card__def">A phenomenon where a model learns the training data too well — including its noise and outliers — and fails to generalise to new data. Symptoms include very high training accuracy but significantly lower validation/test accuracy. Common remedies include regularisation, dropout, data augmentation, and early stopping.</p>
+    </article>
+
+    <!-- 33. Underfitting -->
+    <article class="term-card" data-term="underfitting under-fitting high bias" data-category="evaluation">
+      <span class="term-card__number">#33</span>
+      <span class="term-card__category badge-evaluation">Evaluation</span>
+      <h2 class="term-card__name">Underfitting</h2>
+      <p class="term-card__def">A situation where the model is too simple to capture the underlying patterns in the data, resulting in poor performance on both training and test sets. It often occurs when the network architecture is too small, training is stopped too early, or the learning rate is too high. Solutions include increasing model capacity and training longer.</p>
+    </article>
+
+    <!-- 34. Regularization -->
+    <article class="term-card" data-term="regularization regularisation l1 l2 weight decay" data-category="regularization">
+      <span class="term-card__number">#34</span>
+      <span class="term-card__category badge-regularization">Regularization</span>
+      <h2 class="term-card__name">Regularization</h2>
+      <p class="term-card__def">A collection of techniques used to prevent overfitting by discouraging overly complex models. Common methods include L1 and L2 penalties that add a cost proportional to the magnitude of the weights, as well as dropout and data augmentation. Regularisation helps the model learn generalisable patterns rather than memorising the training data.</p>
+    </article>
+
+    <!-- 35. Dropout -->
+    <article class="term-card" data-term="dropout" data-category="regularization">
+      <span class="term-card__number">#35</span>
+      <span class="term-card__category badge-regularization">Regularization</span>
+      <h2 class="term-card__name">Dropout</h2>
+      <p class="term-card__def">A regularisation technique that randomly deactivates a fraction of neurons during each training step, forcing the network to avoid relying on any single neuron. This creates an implicit ensemble of many sub-networks, which improves generalisation. At test time, all neurons are active but their outputs are scaled accordingly.</p>
+    </article>
+
+    <!-- 36. Dense Layer (Fully Connected) -->
+    <article class="term-card" data-term="dense layer fully connected layer fc linear layer" data-category="architecture">
+      <span class="term-card__number">#36</span>
+      <span class="term-card__category badge-architecture">Architecture</span>
+      <h2 class="term-card__name">Dense Layer (Fully Connected)</h2>
+      <p class="term-card__def">A layer in which every neuron is connected to every neuron in the previous layer, enabling the network to learn global combinations of features. In a CNN, dense layers typically appear at the end, after convolutional and pooling layers, to perform the final classification. They tend to have the most parameters in the network.</p>
+    </article>
+
+    <!-- 37. Flattening -->
+    <article class="term-card" data-term="flattening flatten reshape" data-category="architecture">
+      <span class="term-card__number">#37</span>
+      <span class="term-card__category badge-architecture">Architecture</span>
+      <h2 class="term-card__name">Flattening</h2>
+      <p class="term-card__def">The operation of converting a multi-dimensional feature map (e.g., a 7×7×64 tensor) into a one-dimensional vector so it can be fed into a dense layer. Flattening is the bridge between the spatial feature extraction of convolutional layers and the classification logic of fully connected layers. No learnable parameters are involved in this step.</p>
+    </article>
+
+    <!-- 38. Accuracy -->
+    <article class="term-card" data-term="accuracy classification accuracy" data-category="evaluation">
+      <span class="term-card__number">#38</span>
+      <span class="term-card__category badge-evaluation">Evaluation</span>
+      <h2 class="term-card__name">Accuracy</h2>
+      <p class="term-card__def">The most intuitive evaluation metric, representing the fraction of predictions the model got correct out of the total. While easy to understand, accuracy can be misleading on imbalanced datasets where one class dominates. In such cases, metrics like precision, recall, and F1-score provide a more complete picture.</p>
+    </article>
+
+    <!-- 39. Error Rate -->
+    <article class="term-card" data-term="error rate misclassification rate" data-category="evaluation">
+      <span class="term-card__number">#39</span>
+      <span class="term-card__category badge-evaluation">Evaluation</span>
+      <h2 class="term-card__name">Error Rate</h2>
+      <p class="term-card__def">The complement of accuracy, measuring the proportion of incorrect predictions over all predictions (Error Rate = 1 − Accuracy). It provides a quick snapshot of how often the model makes mistakes. Like accuracy, it should be supplemented with other metrics when class distributions are uneven.</p>
+    </article>
+
+    <!-- 40. Inference -->
+    <article class="term-card" data-term="inference prediction deployment" data-category="evaluation">
+      <span class="term-card__number">#40</span>
+      <span class="term-card__category badge-evaluation">Evaluation</span>
+      <h2 class="term-card__name">Inference</h2>
+      <p class="term-card__def">The process of using a trained model to make predictions on new, unseen data. Unlike training, inference only involves a forward pass — no gradients are computed and no weights are updated. Optimising inference speed and efficiency is critical for deploying models in real-time applications.</p>
+    </article>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="dict-footer">
+    CNN From Scratch — Dictionary &middot; 40 Terms
+  </footer>
+
+</div><!-- /.page-wrapper -->
+
+<script>
+(() => {
+  'use strict';
+
+  /* ------- Search / Filter ------- */
+  const searchInput = document.getElementById('searchInput');
+  const resultCount = document.getElementById('resultCount');
+  const noResults   = document.getElementById('noResults');
+  const grid        = document.getElementById('dictGrid');
+  const cards       = Array.from(grid.querySelectorAll('.term-card'));
+
+  let debounceTimer;
+
+  searchInput.addEventListener('input', () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(filterCards, 150);
+  });
+
+  function filterCards() {
+    const query = searchInput.value.trim().toLowerCase();
+    let visible = 0;
+
+    cards.forEach(card => {
+      const term = card.dataset.term;
+      const name = card.querySelector('.term-card__name').textContent.toLowerCase();
+      const def  = card.querySelector('.term-card__def').textContent.toLowerCase();
+      const cat  = card.dataset.category;
+      const match = !query || term.includes(query) || name.includes(query) || def.includes(query) || cat.includes(query);
+
+      card.classList.toggle('hidden', !match);
+      if (match) visible++;
+    });
+
+    resultCount.textContent = query
+      ? `${visible} term${visible !== 1 ? 's' : ''} found`
+      : 'Showing all 40 terms';
+
+    noResults.classList.toggle('visible', visible === 0);
+  }
+
+  /* ------- Scroll-Reveal with IntersectionObserver ------- */
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Stagger animation based on position in viewport
+          const rect = entry.boundingClientRect;
+          const delay = Math.min(rect.top * 0.15, 200);
+          entry.target.style.transitionDelay = `${delay}ms`;
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.08,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    cards.forEach(card => observer.observe(card));
+  } else {
+    // If reduced motion or no IO support, show all immediately
+    cards.forEach(card => card.classList.add('revealed'));
+  }
+})();
+</script>
+
+</body>
+</html>
